@@ -1,3 +1,4 @@
+" Basic Conf
 :set number
 
 :set tabstop=4
@@ -5,7 +6,9 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+set encoding=UTF-8
 
+" Setup Plugins
 call plug#begin()
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/vim-airline/vim-airline'
@@ -19,16 +22,24 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'vim-test/vim-test'
 
-set encoding=UTF-8
 call plug#end()
 
+" Format Code with Prettier bevor save
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
-nnoremap <leader> p <cmd> Prettier<cr>
-nnoremap <C-N> <cmd> NERDTreeToggle<cr>
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+"  Change leader key to ,
+let mapleader = ","
+
+" Shortcuts
+nnoremap <leader>t :TestFile<cr>
+nnoremap <leader>gs :G status<cr>
+nnoremap <leader>ga :G add .<cr>
+nnoremap <leader>gp :G push<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>fp :Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>

@@ -23,8 +23,10 @@ Plug 'prettier/vim-prettier', {
 set encoding=UTF-8
 call plug#end()
 
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
-
+nnoremap <leader> p <cmd> Prettier<cr>
 nnoremap <C-N> <cmd> NERDTreeToggle<cr>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>

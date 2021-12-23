@@ -40,6 +40,7 @@ nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gc :G commit<cr>
 nnoremap <leader>ga :G add .<cr>
 nnoremap <leader>gp :G push<cr>
+nnoremap <leader>gl :G log<cr>
 
 nnoremap <leader>n :NERDTreeToggle<cr>
 
